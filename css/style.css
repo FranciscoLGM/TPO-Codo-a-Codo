@@ -14,8 +14,6 @@ body {
     background: linear-gradient(to right, #434343, #000000);
     color: whitesmoke;
     font-family: 'Raleway', sans-serif;
-
-
 }
 
 
@@ -24,29 +22,50 @@ body {
     /********************************/
     /*Inicio de los estilos del nav */
     /********************************/
-    nav {
+    .nav-container {
         width: 100%;
-        text-align: center;
+        height: 9rem;
+        max-width: 1140px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: auto;
     }
 
-    nav li a {
-        padding: 10px;
-        font-size: 1rem;
+    [class^="nav-item"] a {
         text-decoration: none;
         color: whitesmoke;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding-right: 5rem;
+        position: relative;
+        transition: all ease-in-out 250ms;
     }
 
-    nav ul {
-        list-style: none;
+    .nav-item {
+        margin-right: auto;
+        margin-left: 4rem;
     }
 
-    nav li {
-        display: inline-block;
+    [class^="nav-item"] a::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 0.4rem;
+        width: 0%;
+        background-color: rgb(155, 52, 239);
+        bottom: -1rem;
+        transition: all ease-in-out 250ms;
     }
 
-    nav li a:hover {
-        color: gray;
+    [class^="nav-item"] a:hover::after {
+        width: 58%;
     }
+
+    [class^="nav-item"] a:hover {
+        color: rgb(155, 52, 239);
+    }
+
 
     /*****************************/
     /*Fin de los estilos del nav */
@@ -225,6 +244,14 @@ body {
         transform: scale(1.1);
     }
 
+    .player-container {
+        display: grid;
+        grid-template-columns: 1;
+        grid-column: 1/-1;
+        width: 100vw;
+        height: 100vh;
+    }
+
 
 
     /******************************/
@@ -249,6 +276,7 @@ body {
     [class^="footer-item"] a {
         color: whitesmoke;
         font-size: 1.5rem;
+        transition: all ease-in-out 250ms;
     }
 
     [class^="footer-item"] a:hover {
@@ -433,5 +461,70 @@ body {
     /***********************************/
     /*Fin de los estilos del Registro */
     /***********************************/
+
+
+    /***********************************/
+    /*Inicio de los estilos de contacto */
+    /***********************************/
+
+    .contact-container {
+        height: 50rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #6303e0;
+    }
+
+    .form-contact {
+        width: 90%;
+        max-width: 25rem;
+        border-radius: 1rem;
+        padding: 3.5rem 1.5rem;
+        margin: auto;
+    }
+
+    .form-input {
+        font-family: inherit;
+        font-size: 1rem;
+    }
+
+    .form-input--message {
+        resize: none;
+        padding: 1.8rem 1rem;
+        margin-bottom: .5rem;
+        outline: none;
+        border: none;
+        border: 1px solid #bbb0b0;
+        border-radius: .2rem;
+    }
+
+    textarea:focus~label,
+    textarea:valid~label {
+        top: -.1rem;
+        font-size: .7rem;
+        color: #434343;
+    }
+
+    textarea {
+        background: none;
+        color: #c6c6c6;
+        font-size: 1rem;
+        padding: .7rem .7rem .7rem .35rem;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--colorTextos);
+    }
+
+    textarea:focus {
+        outline: none;
+        color: var(--colorTextos);
+    }
+
+
+    /***********************************/
+    /*Fin de los estilos de contacto */
+    /***********************************/
+
 
 }
