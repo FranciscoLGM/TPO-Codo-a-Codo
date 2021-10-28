@@ -661,6 +661,7 @@ textarea:focus {
 
     .btn {
         width: 7.7rem;
+        padding: .4rem 0;
     }
 
     .img-movie {
@@ -814,8 +815,13 @@ textarea:focus {
 @media (max-width: 440px) {
 
     .grid-nav {
-        grid-column: 2/8;
+        grid-column: 2/9;
         margin-right: auto;
         text-align: end;
+    }
+
+    .btn {
+        width: 7rem;
+        padding: .3rem 0;
     }
 }

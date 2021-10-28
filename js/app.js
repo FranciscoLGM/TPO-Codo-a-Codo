@@ -19,7 +19,8 @@
     })
 })()
 
-// Validación de nombre de email, nombre de usuario y correo electrónico en el formulario de registro
+
+// Validación de correo electrónico, nombre de usuario y el password en el formulario de registro
 
 const email = document.getElementById("validationCustom03")
 const username = document.getElementById("validationCustomUsername")
@@ -60,5 +61,40 @@ form.addEventListener("submit", e => {
   }
   if (entrada) {
     parrafo.innerHTML = warning
+  }
+})
+
+
+
+// Validación de nombre de usuario, correo electrónico y password en el formulario de Login
+
+const emailLogin = document.getElementById("email")
+const usernameLogin = document.getElementById("username")
+const passwordLogin = document.getElementById("password")
+const formLogin = document.getElementById("form")
+const parrafoLogin = document.getElementById("warning")
+
+form.addEventListener("submit", e => {
+  let warning = ""
+  let entrada = false
+  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+  parrafoLogin.innerHTML = ""
+  if (!regexEmail.test(emailLogin.value)) {
+    warning += `¡El email no es valido!<br>`
+    entrada = true
+    e.preventDefault()
+  }
+  if (usernameLogin.value.length < 6) {
+    warning += `¡El Nombre de usuario no es valido!<br>`
+    entrada = true
+    e.preventDefault()
+  }
+  if (passwordLogin.value.length < 8) {
+    warning += `¡La contraseña no es valida!<br>`
+    entrada = true
+    e.preventDefault()
+  }
+  if (entrada) {
+    parrafoLogin.innerHTML = warning
   }
 })
